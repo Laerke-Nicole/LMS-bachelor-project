@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePreparationsTable extends Migration
+class CreateAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreatePreparationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('preparations', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->enum('type', ['quiz', 'task']);
-            $table->string('url')->nullable();
-            $table->foreignId('course_id')
-                ->constrained('courses')
+            $table->string('street_name');
+            $table->string('street_number');
+            $table->foreignId('postal_code_id')
+                ->constrained('postal_codes')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
             $table->timestamps();
@@ -33,6 +32,6 @@ class CreatePreparationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('preparations');
+        Schema::dropIfExists('addresses');
     }
 }

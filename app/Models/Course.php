@@ -19,4 +19,14 @@ class Course extends Model
     {
         return $this->hasMany(Training::class);
     }
+
+    public function evaluations()
+    {
+        return $this->belongsTo(Evaluation::class);
+    }
+
+    public function followUpTests()
+    {
+        return $this->belongsTo(FollowUpTest::class);
+    }
 }

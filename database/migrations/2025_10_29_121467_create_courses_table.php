@@ -22,7 +22,7 @@ class CreateCoursesTable extends Migration
                 ->constrained('evaluations')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
-            $table->foreignId('follow_up_tests_id')
+            $table->foreignId('follow_up_test_id')
                 ->constrained('follow_up_tests')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();

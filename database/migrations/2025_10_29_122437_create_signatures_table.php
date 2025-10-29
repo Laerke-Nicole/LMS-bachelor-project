@@ -15,6 +15,15 @@ class CreateSignaturesTable extends Migration
     {
         Schema::create('signatures', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->cascadeOnDelete();
+
+            $table->foreignId('evaluation_id')
+                ->constrained('evaluations')
+                ->cascadeOnDelete();
+
             $table->date('signed_date');
             $table->boolean('is_signed')->default(false);
             $table->timestamps();

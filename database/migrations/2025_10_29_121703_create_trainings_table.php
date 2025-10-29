@@ -24,6 +24,7 @@ class CreateTrainingsTable extends Migration
             $table->boolean('reminder_sent_22_m')->default(false);
             $table->date('reminder_before_training')->nullable();
             $table->string('extra_comments')->nullable();
+
             $table->foreignId('course_id')
                 ->constrained('courses')
                 ->cascadeOnDelete()

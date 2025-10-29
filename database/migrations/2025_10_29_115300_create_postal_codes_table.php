@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostalcodesTable extends Migration
+class CreatePostalCodesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePostalcodesTable extends Migration
      */
     public function up()
     {
-        Schema::create('postalcodes', function (Blueprint $table) {
+        Schema::create('postal_codes', function (Blueprint $table) {
             $table->id();
             $table->string('city');
             $table->string('country');
@@ -28,6 +28,6 @@ class CreatePostalcodesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('postalcodes');
+        Schema::dropIfExists('postal_codes');
     }
 }

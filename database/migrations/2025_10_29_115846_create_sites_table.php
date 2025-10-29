@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAbinventechTable extends Migration
+class CreateSitesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateAbinventechTable extends Migration
      */
     public function up()
     {
-        Schema::create('abinventech', function (Blueprint $table) {
+        Schema::create('sites', function (Blueprint $table) {
             $table->id();
-            $table->string('ab_inventech_name');
-            $table->string('ab_inventech_web')->unique();
-            $table->string('ab_inventech_mail')->unique();
-            $table->string('ab_inventech_phone')->unique();
-            $table->foreignId('addresses_id')
-                ->constrained('addresses')
+            $table->string('site_name');
+            $table->string('site_mail')->unique();
+            $table->string('site_phone')->nullable()->unique();
+            $table->foreignId('company_id')
+                ->constrained('companies')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
             $table->timestamps();
@@ -34,6 +33,6 @@ class CreateAbinventechTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('abinventech');
+        Schema::dropIfExists('sites');
     }
 }

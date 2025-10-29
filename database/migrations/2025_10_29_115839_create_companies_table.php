@@ -19,7 +19,7 @@ class CreateCompaniesTable extends Migration
             $table->string('company_mail')->unique();
             $table->string('company_phone')->nullable()->unique();
             $table->boolean('is_vestas')->default(false);
-            $table->foreignId('addresses_id')
+            $table->foreignId('address_id')
                 ->constrained('addresses')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();

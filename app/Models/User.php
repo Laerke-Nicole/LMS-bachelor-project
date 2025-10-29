@@ -18,9 +18,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
+        'phone',
+        'role',
     ];
 
     /**
@@ -39,6 +42,30 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'mail_verified_at' => 'datetime',
     ];
+
+    public function trainings()
+    {
+        return $this->belongsToMany(Training::class);
+    }
+
+    public function emails()
+    {
+        return $this->belongsToMany(Email::class);
+    }
+
+    public function evaluations()
+    {
+        return $this->belongsToMany(Evaluation::class)
+                    ->withPivot('signed_date', 'is_signed')
+                    ->withTimestamps();
+    }
+
+    public function followUpTests()
+    {
+        return $this->belongsToMany(FollowUpTest::class)
+                    ->withPivot('is_passed', 'complete_date')
+                    ->withTimestamps();
+    }
 }

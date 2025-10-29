@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGdprTable extends Migration
+class CreateUserTestResultTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,20 @@ class CreateGdprTable extends Migration
      */
     public function up()
     {
-        Schema::create('gdpr', function (Blueprint $table) {
+        Schema::create('user_test_result', function (Blueprint $table) {
             $table->id();
-            $table->date('valid_until');
-            $table->date('consent_date');
+
             $table->foreignId('user_id')
                 ->constrained('users')
                 ->cascadeOnDelete();
+
+            $table->foreignId('follow_up_test_id')
+                ->constrained('follow_up_tests')
+                ->cascadeOnDelete();
+
+            $table->boolean('is_passed');
+            $table->date('complete_date');
+
             $table->timestamps();
         });
     }
@@ -31,6 +38,6 @@ class CreateGdprTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gdpr');
+        Schema::dropIfExists('user_test_result');
     }
 }
