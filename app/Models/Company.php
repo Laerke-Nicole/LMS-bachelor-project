@@ -14,7 +14,6 @@ class Company extends Model
         'company_mail',
         'company_phone',
         'is_vestas',
-        'addresses_id',
     ];
 
     public function address()

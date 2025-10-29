@@ -45,6 +45,11 @@ class User extends Authenticatable
         'mail_verified_at' => 'datetime',
     ];
 
+    public function address()
+    {
+        return $this->belongsTo(Address::class);
+    }
+
     public function trainings()
     {
         return $this->belongsToMany(Training::class);

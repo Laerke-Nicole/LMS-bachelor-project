@@ -22,6 +22,11 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('phone');
             $table->enum('role', ['user', 'leader', 'admin'])->default('user');
+
+            $table->foreignId('address_id')
+                ->constrained('addresses')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->rememberToken();
             $table->timestamps();
         });

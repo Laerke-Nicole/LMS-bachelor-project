@@ -18,4 +18,19 @@ class Address extends Model
     {
         return $this->belongsTo(PostalCode::class);
     }
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
+    public function companies()
+    {
+        return $this->hasMany(Company::class);
+    }
+
+    public function abInventech()
+    {
+        return $this->hasMany(AbInventech::class);
+    }
 }
