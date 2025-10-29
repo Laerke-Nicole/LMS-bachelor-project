@@ -17,7 +17,11 @@ class CreateFollowUpMaterialsTable extends Migration
             $table->id();
             $table->string('title');
             $table->enum('type', ['video', 'pdf', 'task', 'quiz']);
-            $table->string('url');
+            $table->string('url')->nullable();
+            $table->foreignId('courses_id')
+                ->constrained('courses')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->timestamps();
         });
     }

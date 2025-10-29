@@ -17,6 +17,10 @@ class CreateRequirementsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
+            $table->foreignId('courses_id')
+                ->constrained('courses')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->timestamps();
         });
     }

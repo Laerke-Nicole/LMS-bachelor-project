@@ -17,6 +17,10 @@ class CreateAddressesTable extends Migration
             $table->id();
             $table->string('street_name');
             $table->string('street_number');
+            $table->foreignId('postal_codes')
+                ->constrained('postal_codes')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->timestamps();
         });
     }

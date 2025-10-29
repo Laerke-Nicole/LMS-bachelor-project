@@ -16,9 +16,13 @@ class CreateCompaniesTable extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->string('company_name');
-            $table->string('company_mail');
-            $table->string('company_phone');
-            $table->boolean('is_vestas');
+            $table->string('company_mail')->unique();
+            $table->string('company_phone')->nullable()->unique();
+            $table->boolean('is_vestas')->default(false);
+            $table->foreignId('addresses_id')
+                ->constrained('addresses')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->timestamps();
         });
     }

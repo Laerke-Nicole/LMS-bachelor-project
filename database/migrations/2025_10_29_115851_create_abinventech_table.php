@@ -16,9 +16,13 @@ class CreateAbinventechTable extends Migration
         Schema::create('abinventech', function (Blueprint $table) {
             $table->id();
             $table->string('ab_inventech_name');
-            $table->string('ab_inventech_web');
-            $table->string('ab_inventech_mail');
-            $table->string('ab_inventech_phone');
+            $table->string('ab_inventech_web')->unique();
+            $table->string('ab_inventech_mail')->unique();
+            $table->string('ab_inventech_phone')->unique();
+            $table->foreignId('addresses_id')
+                ->constrained('addresses')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->timestamps();
         });
     }

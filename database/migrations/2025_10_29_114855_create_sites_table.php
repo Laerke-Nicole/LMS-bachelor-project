@@ -16,8 +16,12 @@ class CreateSitesTable extends Migration
         Schema::create('sites', function (Blueprint $table) {
             $table->id();
             $table->string('site_name');
-            $table->string('site_mail');
-            $table->string('site_phone');
+            $table->string('site_mail')->unique();
+            $table->string('site_phone')->nullable()->unique();
+            $table->foreignId('companies_id')
+                ->constrained('companies')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->timestamps();
         });
     }

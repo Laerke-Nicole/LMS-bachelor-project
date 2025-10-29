@@ -16,14 +16,18 @@ class CreateTrainingsTable extends Migration
         Schema::create('trainings', function (Blueprint $table) {
             $table->id();
             $table->enum('place', ['online', 'on_site']);
-            $table->enum('status', ['upcoming', 'comepleted', 'expired']);
+            $table->enum('status', ['upcoming', 'completed', 'expired']);
             $table->time('training_time');
             $table->date('training_date');
             $table->string('participation_link');
-            $table->boolean('reminder_sent_18_m');
-            $table->boolean('reminder_sent_22_m');
-            $table->date('reminder_before_training');
-            $table->string('extra_comments');
+            $table->boolean('reminder_sent_18_m')->default(false);
+            $table->boolean('reminder_sent_22_m')->default(false);
+            $table->date('reminder_before_training')->nullable();
+            $table->string('extra_comments')->nullable();
+            $table->foreignId('course_id')
+                ->constrained('courses')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->timestamps();
         });
     }

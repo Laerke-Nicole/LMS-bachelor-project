@@ -16,7 +16,7 @@ class CreateSignaturesTable extends Migration
         Schema::create('signatures', function (Blueprint $table) {
             $table->id();
             $table->date('signed_date');
-            $table->boolean('is_signed');
+            $table->boolean('is_signed')->default(false);
             $table->timestamps();
         });
     }

@@ -17,9 +17,13 @@ class CreateCertificatesTable extends Migration
             $table->id();
             $table->date('date');
             $table->date('valid_until');
-            $table->boolean('vestas_format');
-            $table->string('url');
-            $table->text('content');
+            $table->boolean('vestas_format')->default(false);
+            $table->string('url')->nullable();
+            $table->text('content')->nullable();
+            $table->foreignId('users_id')
+                ->constrained('users')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->timestamps();
         });
     }

@@ -15,8 +15,8 @@ class CreateUserTestResultsTable extends Migration
     {
         Schema::create('user_test_results', function (Blueprint $table) {
             $table->id();
-            $table->boolean('is_passed');
-            $table->date('comepleted_date');
+            $table->boolean('is_passed')->default(false);
+            $table->date('completed_date');
             $table->timestamps();
         });
     }
