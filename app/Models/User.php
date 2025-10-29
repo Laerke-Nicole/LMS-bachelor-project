@@ -68,4 +68,29 @@ class User extends Authenticatable
                     ->withPivot('is_passed', 'complete_date')
                     ->withTimestamps();
     }
+
+    public function sentEmails()
+    {
+        return $this->hasMany(Email::class, 'sender_id');
+    }
+
+    public function receivedEmails()
+    {
+        return $this->hasMany(Email::class, 'recipient_id');
+    }
+
+    public function orderedTrainings()
+    {
+        return $this->hasMany(Training::class, 'ordered_by_id');
+    }
+
+    public function trainingsAsTrainer()
+    {
+        return $this->hasMany(Training::class, 'trainer_id');
+    }
+
+    public function verifiedCertificates()
+    {
+        return $this->hasMany(Training::class, 'verified_by_id');
+    }
 }

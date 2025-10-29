@@ -21,6 +21,12 @@ class CreateCertificatesTable extends Migration
             $table->boolean('vestas_format')->default(false);
             $table->string('url')->nullable();
             $table->text('content')->nullable();
+
+            $table->foreignId('verified_by_id')
+                ->constrained('users')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
+
             $table->foreignId('user_id')
                 ->constrained('users')
                 ->cascadeOnDelete()

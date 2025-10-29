@@ -14,10 +14,22 @@ class Email extends Model
         'type',
         'subject',
         'content',
+        'sender_id',
+        'recipient_id',
     ];
 
     public function users()
     {
         return $this->belongsToMany(User::class);
+    }
+
+    public function sender()
+    {
+        return $this->belongsTo(User::class, 'sender_id');
+    }
+
+    public function recipient()
+    {
+        return $this->belongsTo(User::class, 'recipient_id');
     }
 }

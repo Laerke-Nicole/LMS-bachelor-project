@@ -22,4 +22,9 @@ class Certificate extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function verifiedBy()
+    {
+        return $this->belongsTo(User::class, 'verified_by_id');
+    }
 }

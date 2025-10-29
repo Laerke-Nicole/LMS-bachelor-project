@@ -20,6 +20,9 @@ class Training extends Model
         'reminder_before_training',
         'extra_comments',
         'course_id',
+        'created_by_id',
+        'ordered_by_id',
+        'trainer_id',
     ];
 
     public function course()
@@ -32,4 +35,13 @@ class Training extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function orderedBy()
+    {
+        return $this->belongsTo(User::class, 'ordered_by_id');
+    }
+
+    public function trainer()
+    {
+        return $this->belongsTo(User::class, 'trainer_id');
+    }
 }

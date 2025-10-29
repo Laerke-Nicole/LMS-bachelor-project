@@ -19,6 +19,16 @@ class CreateEmailsTable extends Migration
             $table->enum('type', ['invitation', 'reminder_before_training', 'reminder_18_m', 'reminder_19_m', 'reminder_22_m', 'certificate']);
             $table->string('subject');
             $table->text('content');
+
+            $table->foreignId('sender_id')
+                ->constrained('users')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
+
+            $table->foreignId('recipient_id')
+                ->constrained('users')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->timestamps();
         });
     }
