@@ -12,15 +12,15 @@ use App\Models\FollowUpTest;
 use App\Models\Gdpr;
 use App\Models\PostalCode;
 use App\Models\Preparation;
-use \App\Models\Product;
+use App\Models\Product;
 use App\Models\Requirement;
 use Database\Factories\SignatureFactory;
 use Database\Factories\UserTestResultFactory;
-use Database\Factories\EmailUserFactory;
-use Database\Factories\TrainingUserFactory;
 use App\Models\Site;
 use App\Models\Training;
 use \App\Models\User;
+use \App\Models\EmailUser;
+use \App\Models\TrainingUser;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -50,8 +50,8 @@ class DatabaseSeeder extends Seeder
         Product::factory(50)->create();
         SignatureFactory::new()->count(50)->create();
         UserTestResultFactory::new()->count(50)->create();
-        EmailUserFactory::new()->count(50)->create();
-        TrainingUserFactory::new()->count(50)->create();
+        EmailUser::factory(100)->create();
+        TrainingUser::factory(100)->create();
 
         //  seeders
         $this->call([

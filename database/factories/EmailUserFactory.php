@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\User;
 use App\Models\Email;
+use App\Models\EmailUser;
 
 class EmailUserFactory extends Factory
 {
@@ -13,6 +14,10 @@ class EmailUserFactory extends Factory
      *
      * @return array
      */
+
+    protected $model = EmailUser::class;
+
+
     public function definition()
     {
         return [

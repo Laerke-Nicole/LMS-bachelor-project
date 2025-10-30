@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\User;
 use App\Models\Training;
+use App\Models\TrainingUser;
 
 class TrainingUserFactory extends Factory
 {
@@ -13,6 +14,9 @@ class TrainingUserFactory extends Factory
      *
      * @return array
      */
+
+    protected $model = TrainingUser::class;
+
     public function definition()
     {
         return [
