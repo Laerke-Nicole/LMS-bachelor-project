@@ -15,10 +15,10 @@ class CreateSitesTable extends Migration
     {
         Schema::create('sites', function (Blueprint $table) {
             $table->id();
-            $table->string('site_name');
-            $table->string('site_mail')->unique();
+            $table->string('site_name')->nullable();
+            $table->string('site_mail')->nullable()->unique();
             $table->string('site_phone')->nullable()->unique();
-            $table->foreignId('company_id')
+            $table->foreignId('company_id')->nullable()
                 ->constrained('companies')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();

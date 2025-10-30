@@ -16,6 +16,7 @@ class AbInventech extends Model
         'ab_inventech_web',
         'ab_inventech_mail',
         'ab_inventech_phone',
+        'logo',
     ];
 
     public function address()

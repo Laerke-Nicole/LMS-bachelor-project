@@ -16,7 +16,7 @@ class CreateTrainingsTable extends Migration
         Schema::create('trainings', function (Blueprint $table) {
             $table->id();
             $table->enum('place', ['online', 'on_site']);
-            $table->enum('status', ['upcoming', 'completed', 'expired']);
+            $table->enum('status', ['upcoming', 'completed', 'expired'])->default('upcoming');
             $table->time('training_time');
             $table->date('training_date');
             $table->string('participation_link');

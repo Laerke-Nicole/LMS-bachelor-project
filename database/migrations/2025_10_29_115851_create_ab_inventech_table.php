@@ -19,6 +19,7 @@ class CreateAbInventechTable extends Migration
             $table->string('ab_inventech_web')->unique();
             $table->string('ab_inventech_mail')->unique();
             $table->string('ab_inventech_phone')->unique();
+            $table->string('logo')->nullable();
             $table->foreignId('address_id')
                 ->constrained('addresses')
                 ->cascadeOnDelete()

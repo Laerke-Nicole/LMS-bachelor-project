@@ -16,7 +16,7 @@ class CreateRequirementsTable extends Migration
         Schema::create('requirements', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('content');
+            $table->text('content')->nullable();
             $table->foreignId('course_id')
                 ->constrained('courses')
                 ->cascadeOnDelete()

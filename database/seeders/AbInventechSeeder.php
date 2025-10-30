@@ -22,6 +22,7 @@ class AbInventechSeeder extends Seeder
             'ab_inventech_web'   => 'https://www.ab-inventech.dk/',
             'ab_inventech_mail'  => 'mail@ab-inventech.dk',
             'ab_inventech_phone' => '+45 97 15 50 22',
+            'logo' => '',
             'address_id' => $address->id,
         ]);
         $abInventech->save();
