@@ -1,57 +1,60 @@
-@extends('layout')
+@extends('components.layout')
 
 
 @section('content')
 
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Laravel 8 CRUD example</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('postal_codes.create') }}">Create new postal code</a>
+    <x-card>
+        <h3>testing</h3>
+    </x-card>
+
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h2>Laravel 8 CRUD example</h2>
+            </div>
+            <div class="pull-right">
+                <a class="btn btn-primary" href="{{ route('postal_codes.create') }}">Create new postal code</a>
+            </div>
         </div>
     </div>
-</div>
 
-@if ($message = Session::get('success'))
-<div class="alert alert-success">
-    <p>{{ $message }}</p>
-</div>
-@endif
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
 
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>Postal code</th>
-        <th>City</th>
-        <th>Country</th>
-        <th width="280px">Action</th>
-    </tr>
-    @foreach ($postalCodes as $postalCode)
-    <tr>
-        <td>{{ $postalCode->id }}</td>
-        <td>{{ $postalCode->postal_code }}</td>
-        <td>{{ $postalCode->city }}</td>
-        <td>{{ $postalCode->country }}</td>
-        <td>
-            <form action="{{ route('postal_codes.destroy',$postalCode->id) }}" method="POST">
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Postal code</th>
+            <th>City</th>
+            <th>Country</th>
+            <th width="280px">Action</th>
+        </tr>
+        @foreach ($postalCodes as $postalCode)
+            <tr>
+                <td>{{ $postalCode->id }}</td>
+                <td>{{ $postalCode->postal_code }}</td>
+                <td>{{ $postalCode->city }}</td>
+                <td>{{ $postalCode->country }}</td>
+                <td>
+                    <form action="{{ route('postal_codes.destroy',$postalCode->id) }}" method="POST">
 
-                <a class="btn btn-info" href="{{ route('postal_codes.show',$postalCode->id) }}">Show</a>
+                        <a class="btn btn-info" href="{{ route('postal_codes.show',$postalCode->id) }}">Show</a>
 
-                <a class="btn btn-primary" href="{{ route('postal_codes.edit',$postalCode->id) }}">Edit</a>
+                        <a class="btn btn-primary" href="{{ route('postal_codes.edit',$postalCode->id) }}">Edit</a>
 
-                @csrf
-                @method('DELETE')
+                        @csrf
+                        @method('DELETE')
 
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
-        </td>
-    </tr>
-    @endforeach
-</table>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+    </table>
 
-{!! $postalCodes->links() !!}
-
+    {!! $postalCodes->links() !!}
 
 @endsection
