@@ -16,6 +16,11 @@ class CreateFollowUpTestsTable extends Migration
         Schema::create('follow_up_tests', function (Blueprint $table) {
             $table->id();
             $table->string('test_link');
+
+            $table->foreignId('course_id')
+                ->constrained('courses')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->timestamps();
         });
     }

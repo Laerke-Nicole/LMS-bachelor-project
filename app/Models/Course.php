@@ -13,6 +13,7 @@ class Course extends Model
         'title',
         'description',
         'duration_months',
+        'image',
     ];
 
     public function trainings()
@@ -22,11 +23,11 @@ class Course extends Model
 
     public function evaluations()
     {
-        return $this->belongsTo(Evaluation::class);
+        return $this->hasMany(Evaluation::class);
     }
 
     public function followUpTests()
     {
-        return $this->belongsTo(FollowUpTest::class);
+        return $this->hasMany(FollowUpTest::class);
     }
 }

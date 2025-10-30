@@ -18,14 +18,7 @@ class CreateCoursesTable extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->integer('duration_months');
-            $table->foreignId('evaluation_id')->nullable()
-                ->constrained('evaluations')
-                ->cascadeOnDelete()
-                ->cascadeOnUpdate();
-            $table->foreignId('follow_up_test_id')
-                ->constrained('follow_up_tests')
-                ->cascadeOnDelete()
-                ->cascadeOnUpdate();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

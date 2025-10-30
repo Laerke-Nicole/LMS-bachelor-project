@@ -40,9 +40,9 @@ class DatabaseSeeder extends Seeder
         Gdpr::factory(50)->create();
         Certificate::factory(10)->create();
         Email::factory(20)->create();
+        $this->call(CourseSeeder::class);
         Evaluation::factory(20)->create();
         FollowUpTest::factory(4)->create();
-        $this->call(CourseSeeder::class);
         Training::factory(100)->create();
         FollowUpMaterial::factory(20)->create();
         Preparation::factory(20)->create();

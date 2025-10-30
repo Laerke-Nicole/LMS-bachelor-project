@@ -14,9 +14,9 @@ class Evaluation extends Model
         'evaluation_link',
     ];
 
-    public function courses()
+    public function course()
     {
-        return $this->hasMany(Course::class);
+        return $this->belongsTo(Course::class);
     }
 
     public function users()

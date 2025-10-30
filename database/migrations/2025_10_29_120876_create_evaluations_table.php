@@ -17,6 +17,11 @@ class CreateEvaluationsTable extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('evaluation_link');
+
+            $table->foreignId('course_id')
+                ->constrained('courses')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->timestamps();
         });
     }
