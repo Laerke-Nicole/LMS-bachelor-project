@@ -16,6 +16,8 @@ use \App\Models\Product;
 use App\Models\Requirement;
 use Database\Factories\SignatureFactory;
 use Database\Factories\UserTestResultFactory;
+use Database\Factories\EmailUserFactory;
+use Database\Factories\TrainingUserFactory;
 use App\Models\Site;
 use App\Models\Training;
 use \App\Models\User;
@@ -48,14 +50,14 @@ class DatabaseSeeder extends Seeder
         Product::factory(50)->create();
         SignatureFactory::new()->count(50)->create();
         UserTestResultFactory::new()->count(50)->create();
+        EmailUserFactory::new()->count(50)->create();
+        TrainingUserFactory::new()->count(50)->create();
 
         //  seeders
         $this->call([
             PostalCodeSeeder::class,
             AddressSeeder::class,
             AbInventechSeeder::class,
-            EmailUserSeeder::class,
-            TrainingUserSeeder::class,
         ]);
     }
 }

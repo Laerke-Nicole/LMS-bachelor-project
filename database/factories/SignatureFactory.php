@@ -14,6 +14,7 @@ class SignatureFactory extends Factory
      *
      * @return array
      */
+//    specify the name of the table since Laravel would assume its called evaluation_user instead
     protected $model = Signature::class;
 
     public function definition()

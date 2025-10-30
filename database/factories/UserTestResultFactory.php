@@ -14,6 +14,7 @@ class UserTestResultFactory extends Factory
      *
      * @return array
      */
+    //    specify the name of the table since Laravel would assume its called follow_up_test_user instead
     protected $model = UserTestResult::class;
 
     public function definition()
