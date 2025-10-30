@@ -25,7 +25,7 @@ class CreateUserTestResultTable extends Migration
                 ->cascadeOnDelete();
 
             $table->boolean('is_passed');
-            $table->date('complete_date');
+            $table->date('completed_date');
 
             $table->timestamps();
         });

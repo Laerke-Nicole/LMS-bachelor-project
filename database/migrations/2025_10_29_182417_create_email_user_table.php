@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserEmailTable extends Migration
+class CreateEmailUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUserEmailTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_email', function (Blueprint $table) {
+        Schema::create('email_user', function (Blueprint $table) {
             $table->id();
 
             $table->foreignId('user_id')
@@ -35,6 +35,6 @@ class CreateUserEmailTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_email');
+        Schema::dropIfExists('email_user');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserTestResultsTable extends Migration
+class CreateTrainingUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,17 @@ class CreateUserTestResultsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_test_results', function (Blueprint $table) {
+        Schema::create('training_user', function (Blueprint $table) {
             $table->id();
-            $table->boolean('is_passed')->default(false);
-            $table->date('completed_date');
+
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->cascadeOnDelete();
+
+            $table->foreignId('training_id')
+                ->constrained('trainings')
+                ->cascadeOnDelete();
+
             $table->timestamps();
         });
     }
@@ -28,6 +35,6 @@ class CreateUserTestResultsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_test_results');
+        Schema::dropIfExists('training_user');
     }
 }

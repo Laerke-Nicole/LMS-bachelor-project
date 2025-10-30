@@ -59,24 +59,26 @@ class User extends Authenticatable
 
     public function trainings()
     {
-        return $this->belongsToMany(Training::class);
+        return $this->belongsToMany(Training::class)->withTimestamps();
     }
 
     public function emails()
     {
-        return $this->belongsToMany(Email::class);
+        return $this->belongsToMany(Email::class)->withTimestamps();
     }
 
     public function evaluations()
     {
-        return $this->belongsToMany(Evaluation::class)
+        return $this->belongsToMany(Evaluation::class, 'signature')
+                    ->using(Signature::class)
                     ->withPivot('signed_date', 'is_signed')
                     ->withTimestamps();
     }
 
     public function followUpTests()
     {
-        return $this->belongsToMany(FollowUpTest::class)
+        return $this->belongsToMany(FollowUpTest::class, 'user_test_result')
+                    ->using(UserTestResult::class)
                     ->withPivot('is_passed', 'complete_date')
                     ->withTimestamps();
     }

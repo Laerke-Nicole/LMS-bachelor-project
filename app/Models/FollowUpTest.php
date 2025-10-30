@@ -20,8 +20,9 @@ class FollowUpTest extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class)
-                    ->withPivot('is_passed', 'complete_date')
+        return $this->belongsToMany(User::class, 'user_test_result')
+                    ->using(UserTestResult::class)
+                    ->withPivot('signed_date', 'is_signed')
                     ->withTimestamps();
     }
 }

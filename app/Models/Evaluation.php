@@ -21,8 +21,10 @@ class Evaluation extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class)
+        return $this->belongsToMany(User::class, 'signature')
+                    ->using(Signature::class)
                     ->withPivot('signed_date', 'is_signed')
                     ->withTimestamps();
     }
+
 }

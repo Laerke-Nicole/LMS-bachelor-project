@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Signature;
 use App\Models\Evaluation;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -13,6 +14,8 @@ class SignatureFactory extends Factory
      *
      * @return array
      */
+    protected $model = Signature::class;
+
     public function definition()
     {
         return [
