@@ -9,6 +9,8 @@ class AbInventech extends Model
 {
     use HasFactory;
 
+    protected $table = 'ab_inventech';
+
     protected $fillable = [
         'ab_inventech_name',
         'ab_inventech_web',

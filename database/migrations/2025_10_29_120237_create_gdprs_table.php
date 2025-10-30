@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGdprTable extends Migration
+class CreateGdprsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateGdprTable extends Migration
      */
     public function up()
     {
-        Schema::create('gdpr', function (Blueprint $table) {
+        Schema::create('gdprs', function (Blueprint $table) {
             $table->id();
             $table->date('valid_until');
             $table->date('consent_date');
@@ -31,6 +31,6 @@ class CreateGdprTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gdpr');
+        Schema::dropIfExists('gdprs');
     }
 }

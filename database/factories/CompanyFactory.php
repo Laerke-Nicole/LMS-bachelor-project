@@ -19,7 +19,7 @@ class CompanyFactory extends Factory
             'company_mail' => $this->faker->unique()->companyEmail(),
             'company_phone' => $this->faker->unique()->phoneNumber(),
             'is_vestas' => $this->faker->boolean(20),
-            'address_id' => Address::factory(),
+            'address_id' => Address::inRandomOrder()->first()->id,
         ];
     }
 }

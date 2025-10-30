@@ -23,8 +23,8 @@ class CertificateFactory extends Factory
             'vestas_format' => $this->faker->boolean(30),
             'url' => $this->faker->url(),
             'content' => $this->faker->paragraph(),
-            'verified_by_id' => User::factory(),
-            'user_id' => User::factory(),
+            'verified_by_id' => User::inRandomOrder()->first()->id,
+            'user_id' => User::inRandomOrder()->first()->id,
         ];
     }
 }

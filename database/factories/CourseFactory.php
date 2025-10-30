@@ -19,8 +19,8 @@ class CourseFactory extends Factory
             'title' => $this->faker->sentence(4),
             'description' => $this->faker->paragraph(),
             'duration_months' => $this->faker->numberBetween(1, 24),
-            'evaluations_id' => Evaluation::factory(),
-            'follow_up_test_id' => FollowUpTest::factory(),
+            'evaluations_id' => Evaluation::inRandomOrder()->first()->id,
+            'follow_up_test_id' => FollowUpTest::inRandomOrder()->first()->id,
         ];
     }
 }

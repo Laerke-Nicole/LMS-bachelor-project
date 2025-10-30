@@ -20,7 +20,7 @@ class FollowUpMaterialFactory extends Factory
             'title' => $this->faker->sentence(3),
             'type' => $this->faker->randomElement($types),
             'url' => $this->faker->url(),
-            'course_id' => Course::factory(),
+            'course_id' => Course::inRandomOrder()->first()->id,
         ];
     }
 }

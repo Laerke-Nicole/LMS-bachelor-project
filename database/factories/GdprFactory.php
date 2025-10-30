@@ -19,7 +19,7 @@ class GdprFactory extends Factory
         return [
             'consent_date' => $consentDate,
             'valid_until' => $this->faker->dateTimeBetween($consentDate, '+3 years'),
-            'user_id' => User::factory(),
+            'user_id' => User::inRandomOrder()->first()->id,
         ];
     }
 }

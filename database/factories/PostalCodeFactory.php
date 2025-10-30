@@ -14,6 +14,7 @@ class PostalCodeFactory extends Factory
     public function definition()
     {
         return [
+            'postal_code' => $this->faker->postcode(),
             'city' => $this->faker->city(),
             'country' => $this->faker->country(),
         ];

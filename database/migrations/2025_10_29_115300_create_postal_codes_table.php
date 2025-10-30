@@ -15,6 +15,7 @@ class CreatePostalCodesTable extends Migration
     {
         Schema::create('postal_codes', function (Blueprint $table) {
             $table->id();
+            $table->string('postal_code');
             $table->string('city');
             $table->string('country');
             $table->timestamps();
