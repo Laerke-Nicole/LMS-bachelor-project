@@ -27,6 +27,11 @@ class CreateUsersTable extends Migration
                 ->constrained('addresses')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
+
+            $table->foreignId('company_id')
+                ->constrained('companies')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->rememberToken();
             $table->timestamps();
         });

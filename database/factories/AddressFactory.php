@@ -17,7 +17,7 @@ class AddressFactory extends Factory
         return [
             'street_name' => $this->faker->streetName(),
             'street_number' => $this->faker->buildingNumber(),
-            'postal_code_id' => PostalCode::inRandomOrder()->first()->id,
+            'postal_code_id' => PostalCode::inRandomOrder()->value('id'),
         ];
     }
 }

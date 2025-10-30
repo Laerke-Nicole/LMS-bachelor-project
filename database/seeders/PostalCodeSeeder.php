@@ -1,8 +1,5 @@
 <?php
 
-// seed data by running in cli: php artisan migrate:refresh --seed (it restarts the db data for product with the data listed below)
-
-
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;

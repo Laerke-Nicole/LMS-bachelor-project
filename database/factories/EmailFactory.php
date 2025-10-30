@@ -21,8 +21,8 @@ class EmailFactory extends Factory
             'type' => $this->faker->randomElement($types),
             'subject' => $this->faker->sentence(),
             'content' => $this->faker->paragraphs(3, true),
-            'sender_id' => User::inRandomOrder()->first()->id,
-            'recipient_id' => User::inRandomOrder()->first()->id,
+            'sender_id' => User::inRandomOrder()->value('id'),
+            'recipient_id' => User::inRandomOrder()->value('id'),
         ];
     }
 }

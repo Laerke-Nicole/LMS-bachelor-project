@@ -18,7 +18,7 @@ class SiteFactory extends Factory
             'site_name' => $this->faker->company() . ' - ' . $this->faker->city(),
             'site_mail' => $this->faker->unique()->companyEmail(),
             'site_phone' => $this->faker->unique()->phoneNumber(),
-            'company_id' => Company::inRandomOrder()->first()->id,
+            'company_id' => Company::inRandomOrder()->value('id'),
         ];
     }
 }

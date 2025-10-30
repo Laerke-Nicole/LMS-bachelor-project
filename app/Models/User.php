@@ -20,10 +20,12 @@ class User extends Authenticatable
     protected $fillable = [
         'first_name',
         'last_name',
-        'email',
+        'mail',
         'password',
         'phone',
         'role',
+        'address_id',
+        'company_id',
     ];
 
     /**
@@ -48,6 +50,11 @@ class User extends Authenticatable
     public function address()
     {
         return $this->belongsTo(Address::class);
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
     }
 
     public function trainings()

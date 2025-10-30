@@ -16,8 +16,8 @@ class SignatureFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::inRandomOrder()->first()->id,
-            'evaluation_id' => Evaluation::inRandomOrder()->first()->id,
+            'user_id' => User::inRandomOrder()->value('id'),
+            'evaluation_id' => Evaluation::inRandomOrder()->value('id'),
             'signed_date' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'is_signed' => $this->faker->boolean(70),
         ];

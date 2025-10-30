@@ -17,7 +17,7 @@ class RequirementFactory extends Factory
         return [
             'title' => $this->faker->sentence(4),
             'content' => $this->faker->paragraphs(2, true),
-            'course_id' => Course::inRandomOrder()->first()->id,
+            'course_id' => Course::inRandomOrder()->value('id'),
         ];
     }
 }

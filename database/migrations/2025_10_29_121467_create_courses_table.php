@@ -18,7 +18,7 @@ class CreateCoursesTable extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->integer('duration_months');
-            $table->foreignId('evaluations_id')
+            $table->foreignId('evaluation_id')
                 ->constrained('evaluations')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();

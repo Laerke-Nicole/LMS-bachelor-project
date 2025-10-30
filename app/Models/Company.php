@@ -20,4 +20,9 @@ class Company extends Model
     {
         return $this->belongsTo(Address::class);
     }
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }

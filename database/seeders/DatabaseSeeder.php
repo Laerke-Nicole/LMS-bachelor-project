@@ -32,15 +32,16 @@ class DatabaseSeeder extends Seeder
     {
         PostalCode::factory(30)->create();
         Address::factory(50)->create();
-        User::factory(50)->create();
         Company::factory(10)->create();
+        User::factory(50)->create();
         Site::factory(50)->create();
         Gdpr::factory(50)->create();
         Certificate::factory(10)->create();
         Email::factory(20)->create();
         Evaluation::factory(20)->create();
         FollowUpTest::factory(4)->create();
-        Course::factory(4)->create();
+        $this->call(CourseSeeder::class);
+//        Course::factory(4)->create();
         Training::factory(50)->create();
         FollowUpMaterial::factory(20)->create();
         Preparation::factory(20)->create();
