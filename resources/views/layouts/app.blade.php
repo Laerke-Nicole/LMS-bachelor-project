@@ -73,9 +73,6 @@
     <nav id="menu">
         <ul>
             <li><x-elements.link href="/" class="" title="Dashboard"></x-elements.link></li>
-            <li><x-elements.link href="/companies" class="" title="Clients"></x-elements.link></li>
-            <li><x-elements.link href="/trainings" class="" title="Trainings"></x-elements.link></li>
-            <li><x-elements.link href="/courses" class="" title="Courses"></x-elements.link></li>
 
             <x-blocks.mmenu-dropdown title="Clients">
                 <li><x-elements.link class="" title="Sites" href="/sites"></x-elements.link></li>
@@ -88,13 +85,16 @@
                 <li><x-elements.link class="" title="Completed trainings" href="/trainings/completed"></x-elements.link></li>
             </x-blocks.mmenu-dropdown>
 
-
-            <x-blocks.mmenu-dropdown title="Clients">
-                <x-blocks.mmenu-dropdown title="Clients">
-                    <li><x-elements.link class="" title="Test" href="/sites"></x-elements.link></li>
-                    <li><x-elements.link class="" title="Test" href="/sites"></x-elements.link></li>
-                </x-blocks.mmenu-dropdown>
+            <x-blocks.mmenu-dropdown title="Courses">
+                <li><x-elements.link class="dropdown-item" title="Certificate" href="/certificate"></x-elements.link></li>
             </x-blocks.mmenu-dropdown>
+
+{{--            <x-blocks.mmenu-dropdown title="Clients">--}}
+{{--                <x-blocks.mmenu-dropdown title="Clients">--}}
+{{--                    <li><x-elements.link class="" title="Test" href="/sites"></x-elements.link></li>--}}
+{{--                    <li><x-elements.link class="" title="Test" href="/sites"></x-elements.link></li>--}}
+{{--                </x-blocks.mmenu-dropdown>--}}
+{{--            </x-blocks.mmenu-dropdown>--}}
         </ul>
     </nav>
 

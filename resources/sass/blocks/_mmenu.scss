@@ -1,5 +1,6 @@
 .mm-menu {
     --mm-listitem-size: 56px;
+    --mm-color-background: $light;
 }
 
 // mmenu on large desktop and up
@@ -16,7 +17,7 @@
         z-index: 1000;
         height: 100vh;
         overflow-y: auto;
-        width: 200px !important;
+        width: 250px !important;
     }
 
     .mm-wrapper--sidebar-expanded .mm-page,
@@ -25,7 +26,7 @@
     }
 
     #app {
-        margin-left: 200px;
+        margin-left: 250px;
     }
 }
 

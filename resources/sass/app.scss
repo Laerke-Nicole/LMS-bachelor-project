@@ -1,1 +1,11 @@
+// fonts
+//@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// variables
+@import 'variable-overrides';
+
+//styling
 @import 'blocks/import';
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
