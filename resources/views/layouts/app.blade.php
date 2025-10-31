@@ -21,20 +21,20 @@
 
         <nav id="menu">
             <ul>
-                <li><x-elements.link href="/" title="Dashboard"></x-elements.link></li>
+                <li><x-elements.link href="/" title="Dashboard" icon="bi bi-house"></x-elements.link></li>
 
-                <x-blocks.mmenu-dropdown title="Clients">
+                <x-blocks.mmenu-dropdown title="Clients" icon="bi bi-building">
                     <li><x-elements.link title="Sites" href="/sites" icon="bi bi-dot"></x-elements.link></li>
                     <li><x-elements.link title="Users" href="/users" icon="bi bi-dot"></x-elements.link></li>
                     <li><x-elements.link title="User groups" href="/training_users" icon="bi bi-dot"></x-elements.link></li>
                 </x-blocks.mmenu-dropdown>
 
-                <x-blocks.mmenu-dropdown title="Trainings">
+                <x-blocks.mmenu-dropdown title="Trainings" icon="bi bi-mortarboard">
                     <li><x-elements.link title="Upcoming trainings" href="/trainings/upcoming" icon="bi bi-dot"></x-elements.link></li>
                     <li><x-elements.link title="Completed trainings" href="/trainings/completed" icon="bi bi-dot"></x-elements.link></li>
                 </x-blocks.mmenu-dropdown>
 
-                <x-blocks.mmenu-dropdown title="Courses">
+                <x-blocks.mmenu-dropdown title="Courses" icon="bi bi-journals">
                     <li><x-elements.link class="dropdown-item" title="Certificate" href="/certificate" icon="bi bi-dot"></x-elements.link></li>
                 </x-blocks.mmenu-dropdown>
 
