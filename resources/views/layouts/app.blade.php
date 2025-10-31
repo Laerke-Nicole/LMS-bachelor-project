@@ -5,7 +5,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <!-- CSS and JS -->
-    <link href="{{ mix('sass/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <script src="{{ mix('js/app.js') }}" defer></script>
 
 </head>
@@ -15,7 +15,7 @@
     <!-- Menu Toggle Button - Only visible on screens < 992px (large and down) -->
     <div class="p-3 d-lg-none">
         <a href="#menu" class="btn btn-primary">
-            <span>☰</span> Menu
+            <span>☰</span>
         </a>
     </div>
 

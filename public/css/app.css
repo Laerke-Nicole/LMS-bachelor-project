@@ -1,0 +1,38 @@
+.mm-menu {
+  --mm-listitem-size: 56px;
+}
+
+@media (min-width: 992px) {
+  .mm-menu {
+    width: 180px !important;
+  }
+  /* Sidebar position (fixed left) */
+  .mm-wrapper--sidebar-expanded .mm-menu {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  /* Tell mmenu not to push content */
+  body.mm-wrapper--sidebar-expanded {
+    --mm-sidebar-expanded-size: 0 !important;
+  }
+  /* Prevent transform push */
+  .mm-wrapper--sidebar-expanded .mm-page,
+  .mm-wrapper--sidebar-expanded .mm-slideout {
+    transform: none !important;
+  }
+  #app {
+    margin-left: 180px;
+  }
+}
+@media (max-width: 991px) {
+  .mm-wrapper,
+  .mm-page,
+  .mm-menu {
+    transition: transform 0.3s ease;
+  }
+}

@@ -5,6 +5,10 @@ import Mmenu from 'mmenu-js';
 
 document.addEventListener("DOMContentLoaded", () => {
     const menu = new Mmenu("#menu", {
+        navbar: {
+            add: true,
+            title: "title",
+        },
         slidingSubmenus: false,
         offCanvas: {
             position: "left"

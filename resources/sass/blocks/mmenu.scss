@@ -1,38 +1,45 @@
 .mm-menu {
     --mm-listitem-size: 56px;
-
 }
 
-/* only show the pushing animation on large down screens */
-@media (min-width: 992px) {
-    .mm-wrapper,
-    .mm-wrapper__blocker {
-        transition: none !important;
-    }
+//mmenu on large desktop and up
+@include media-screen-down(lg) {
 
-    .mm-page {
-        transition: none !important;
-    }
+    body {
+        .mm-wrapper--sidebar-expanded {
+            --mm-sidebar-expanded-size: 0 !important;
 
-    .mm-menu {
-        transition: none !important;
+            .mm-menu {
+                position: fixed !important;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                z-index: 1000;
+                height: 100vh;
+                overflow-y: auto;
+                width: 180px !important;
+            }
 
-    }
+            .mm-page,
+            .mm-wrapper--sidebar-expanded .mm-slideout {
+                transform: none !important;
+            }
+        }
 
-    body.mm-wrapper--sidebar-expanded #app {
-        padding-left: 0;
-    }
-
-    body.mm-wrapper--sidebar-expanded main.container {
-        margin-left: 0;
+        #app {
+            margin-left: 180px;
+        }
     }
 }
 
-/* show pushing animation on small screens */
+
+//mmenu on large screens and down
 @media (max-width: 991px) {
-    .mm-wrapper,
-    .mm-page,
-    .mm-menu {
-        transition: transform 0.3s ease;
+    .mm-wrapper {
+        .mm-page {
+            .mm-menu {
+                transition: transform 0.3s ease;
+            }
+        }
     }
 }
