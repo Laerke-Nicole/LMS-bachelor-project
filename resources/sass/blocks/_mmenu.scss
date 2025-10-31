@@ -4,7 +4,7 @@
 }
 
 // mmenu on large desktop and up
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
     body.mm-wrapper--sidebar-expanded {
         --mm-sidebar-expanded-size: 0 !important;
     }

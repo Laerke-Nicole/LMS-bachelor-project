@@ -3,6 +3,8 @@
 
     {{ $slot }}
 
-    <button type="submit" class="btn btn-primary">{{ $buttonText ?? 'Submit' }}</button>
+    <div>
+        <button type="submit" class="btn btn-primary">{{ $buttonText ?? 'Submit' }}</button>
+    </div>
 
 </form>

@@ -12,22 +12,16 @@
                 <div class="w-100" style="max-width: 320px;">
                     <h3 class="fw-semibold mb-4">Log in</h3>
 
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label small ls-2 fs-6 text-uppercase" for="email">Email</label>
-                            <input type="email" class="form-control shadow-none fs-5" id="email" placeholder="Enter your email">
-                        </div>
+                    <x-blocks.form action="{{ route('postal_codes.store') }}" buttonText="Log in">
+                        <x-elements.input label="Email" placeholder="Enter your email" name="email" class="form-control" />
 
-                        <div class="mb-4">
-                            <label class="form-label small ls-2 fs-6 text-uppercase" for="password">Password</label>
-                            <input type="password" class="form-control shadow-none fs-5" id="password" placeholder="Enter your password">
-                        </div>
+                        <x-elements.input label="Password" placeholder="Enter your password" name="password" class="form-control" />
 
                         <div class="d-flex flex-column mt-2">
-                            <a href="#" class="small mb-3 text-decoration-none text-secondary"><u>Forgot your password?</u></a>
+                            <a href="#" class="small mb-4 text-decoration-none text-secondary opacity-75 fs-5"><u>Forgot your password?</u></a>
                             <button type="submit" class="btn btn-primary">Log in</button>
                         </div>
-                    </form>
+                    </x-blocks.form>
                 </div>
             </div>
 

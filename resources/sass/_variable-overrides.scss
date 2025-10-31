@@ -52,7 +52,7 @@ $form-label-color: $headings-color;
 
 $input-padding-y: 0.6rem;
 $input-padding-x: 1rem;
-$input-font-size: 1rem;
+$input-font-size: 0.9rem;
 $input-line-height: 1.4;
 $input-placeholder-color: #BEBEBE;
 $input-border-radius: 0rem;
@@ -65,3 +65,7 @@ $grid-breakpoints: (
     lg: 992px,
     xl: 1200px,
     xxl: 1400px);
+
+// ----- Tables -----
+$table-cell-padding-y: 0.9rem;
+$table-cell-padding-x: 0.9rem;
