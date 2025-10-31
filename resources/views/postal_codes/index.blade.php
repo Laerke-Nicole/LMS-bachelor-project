@@ -1,33 +1,12 @@
 @extends('components.layouts.layout')
 
-
 @section('content')
 
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Laravel 8 CRUD example</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('postal_codes.create') }}">Create new postal code</a>
-            </div>
-        </div>
-    </div>
+    <x-blocks.title href="{{ route('postal_codes.create') }}" title="Postal Codes" buttonText="Create New Postal Code" />
 
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{ $message }}</p>
-        </div>
-    @endif
+    <x-blocks.message />
 
-    <table class="table table-bordered">
-        <tr>
-            <th>ID</th>
-            <th>Postal code</th>
-            <th>City</th>
-            <th>Country</th>
-            <th width="280px">Action</th>
-        </tr>
+    <x-blocks.table :headers="['ID', 'Postal Code', 'City', 'Country', 'Action']">
         @foreach ($postalCodes as $postalCode)
             <tr>
                 <td>{{ $postalCode->id }}</td>
@@ -35,22 +14,13 @@
                 <td>{{ $postalCode->city }}</td>
                 <td>{{ $postalCode->country }}</td>
                 <td>
-                    <form action="{{ route('postal_codes.destroy',$postalCode->id) }}" method="POST">
-
-                        <a class="btn btn-info" href="{{ route('postal_codes.show',$postalCode->id) }}">Show</a>
-
-                        <a class="btn btn-primary" href="{{ route('postal_codes.edit',$postalCode->id) }}">Edit</a>
-
-                        @csrf
-                        @method('DELETE')
-
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
+                    <x-blocks.table-row-actions :showRoute="route('postal_codes.show', $postalCode->id)" :editRoute="route('postal_codes.edit', $postalCode->id)" :deleteRoute="route('postal_codes.destroy', $postalCode->id)" />
                 </td>
             </tr>
         @endforeach
-    </table>
+    </x-blocks.table>
 
-    {!! $postalCodes->links() !!}
+
+    <x-blocks.pagination :items="$postalCodes" />
 
 @endsection

@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostalCodeController;
+use App\Http\Controllers\AddressController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +21,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::resource('postal_codes', PostalCodeController::class);
+//Route::resource('address', AddressController::class);
