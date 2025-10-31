@@ -1,11 +1,7 @@
-@extends('components.layout')
+@extends('components.layouts.layout')
 
 
 @section('content')
-
-    <x-card>
-        <h3>testing</h3>
-    </x-card>
 
     <div class="row">
         <div class="col-lg-12 margin-tb">

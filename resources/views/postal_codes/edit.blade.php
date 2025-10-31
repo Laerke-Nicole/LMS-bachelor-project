@@ -1,50 +1,18 @@
-@extends('components.layout')
+@extends('components.layouts.layout')
 
 @section('content')
 
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit Postal Code</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('postal_codes.index') }}">Back</a>
-            </div>
-        </div>
-    </div>
+    <x-blocks.title href="{{ route('postal_codes.index') }}" title="Edit postal code" buttonText="Go back"></x-blocks.title>
 
-    <x-error-alert />
+    <x-blocks.error-alert/>
 
-    <form action="{{ route('postal_codes.update', $postalCode->id) }}" method="POST">
-        @csrf
+    <x-blocks.form action="{{ route('postal_codes.update', $postalCode->id) }}" buttonText="Submit">
         @method('PUT')
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Postal Code:</strong>
-                    <input type="text" name="postal_code" value="{{ $postalCode->postal_code }}" class="form-control"
-                           placeholder="Postal code">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>City:</strong>
-                    <input type="text" name="city" value="{{ $postalCode->city }}" class="form-control"
-                           placeholder="City">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Country:</strong>
-                    <input type="text" name="country" value="{{ $postalCode->country }}" class="form-control"
-                           placeholder="Country">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
-    </form>
+        <x-elements.input label="Postal Code" name="postal_code" value="{{ $postalCode->postal_code }}" />
+        <x-elements.input label="City" name="city" value="{{ $postalCode->city }}"/>
+        <x-elements.input label="Country" name="country" value="{{ $postalCode->country }}"/>
+    </x-blocks.form>
+
 
 @endsection
