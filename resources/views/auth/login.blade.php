@@ -3,19 +3,19 @@
 @section('content')
     <div class="container-fluid vh-100">
         <div class="row h-100">
-            <!-- Left side -->
-            <div class="col-lg-4 d-flex flex-column justify-content-center align-items-start px-5 bg-white">
+            <!-- left side with form -->
+            <div class="col-12 col-lg-4 d-flex flex-column justify-content-center align-items-start px-0 px-lg-5 bg-white">
                 <div class="mb-5">
                     <img src="{{ asset('images/logo.png') }}" alt="AB Inventech" style="max-width: 160px;">
                 </div>
 
                 <div class="w-100" style="max-width: 320px;">
-                    <h3 class="fw-semibold mb-4">Log in</h3>
+                    <h3 class="mb-4">Log in</h3>
 
                     <x-blocks.form action="{{ route('postal_codes.store') }}" buttonText="Log in">
-                        <x-elements.input label="Email" placeholder="Enter your email" name="email" class="form-control" />
+                        <x-elements.input label="Email" placeholder="Enter your email" name="email" />
 
-                        <x-elements.input label="Password" placeholder="Enter your password" name="password" class="form-control" />
+                        <x-elements.input label="Password" placeholder="Enter your password" name="password" />
 
                         <div class="d-flex flex-column mt-2">
                             <a href="#" class="small mb-4 text-decoration-none text-secondary opacity-75 fs-5"><u>Forgot your password?</u></a>
@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <!-- Right side -->
+            <!-- right side with img -->
             <div class="col-lg-8 d-none d-lg-block p-0">
 {{--                <img src="{{ asset('images/login-bg.jpg') }}"--}}
 {{--                     alt="Wind turbines"--}}

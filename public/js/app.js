@@ -23955,7 +23955,7 @@ var initMmenu = function initMmenu() {
   var menu = new mmenu_js__WEBPACK_IMPORTED_MODULE_1__["default"]("#menu", {
     navbar: {
       add: true,
-      title: "title"
+      title: "Ab-Inventech"
     },
     slidingSubmenus: false,
     offCanvas: {

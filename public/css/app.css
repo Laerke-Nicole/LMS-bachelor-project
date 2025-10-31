@@ -17484,8 +17484,16 @@ textarea.form-control-lg {
   z-index: 3 !important;
 }
 
+.ls-1 {
+  letter-spacing: 0.1em !important;
+}
+
 .ls-2 {
   letter-spacing: 0.2em !important;
+}
+
+.box-shadow-inset {
+  box-shadow: 0 4px rgba(0, 0, 0, 0.031372549) inset !important;
 }
 
 @media (min-width: 576px) {
@@ -18047,6 +18055,9 @@ textarea.form-control-lg {
   }
   .text-sm-center {
     text-align: center !important;
+  }
+  .ls-sm-1 {
+    letter-spacing: 0.1em !important;
   }
   .ls-sm-2 {
     letter-spacing: 0.2em !important;
@@ -18612,6 +18623,9 @@ textarea.form-control-lg {
   .text-md-center {
     text-align: center !important;
   }
+  .ls-md-1 {
+    letter-spacing: 0.1em !important;
+  }
   .ls-md-2 {
     letter-spacing: 0.2em !important;
   }
@@ -19175,6 +19189,9 @@ textarea.form-control-lg {
   }
   .text-lg-center {
     text-align: center !important;
+  }
+  .ls-lg-1 {
+    letter-spacing: 0.1em !important;
   }
   .ls-lg-2 {
     letter-spacing: 0.2em !important;
@@ -19740,6 +19757,9 @@ textarea.form-control-lg {
   .text-xl-center {
     text-align: center !important;
   }
+  .ls-xl-1 {
+    letter-spacing: 0.1em !important;
+  }
   .ls-xl-2 {
     letter-spacing: 0.2em !important;
   }
@@ -20303,6 +20323,9 @@ textarea.form-control-lg {
   }
   .text-xxl-center {
     text-align: center !important;
+  }
+  .ls-xxl-1 {
+    letter-spacing: 0.1em !important;
   }
   .ls-xxl-2 {
     letter-spacing: 0.2em !important;
