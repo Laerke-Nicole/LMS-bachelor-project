@@ -23972,17 +23972,6 @@ var initMmenu = function initMmenu() {
       }
     }
   });
-
-  // Get the API
-  var api = menu.API;
-
-  // Log when menu opens/closes for debugging
-  api.bind("open:start", function () {
-    return console.log("Menu opening");
-  });
-  api.bind("close:start", function () {
-    return console.log("Menu closing");
-  });
 };
 
 /***/ }),
