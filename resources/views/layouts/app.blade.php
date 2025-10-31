@@ -24,18 +24,18 @@
                 <li><x-elements.link href="/" title="Dashboard"></x-elements.link></li>
 
                 <x-blocks.mmenu-dropdown title="Clients">
-                    <li><x-elements.link title="Sites" href="/sites"></x-elements.link></li>
-                    <li><x-elements.link title="Users" href="/users"></x-elements.link></li>
-                    <li><x-elements.link title="User groups" href="/training_users"></x-elements.link></li>
+                    <li><x-elements.link title="Sites" href="/sites" icon="bi bi-dot"></x-elements.link></li>
+                    <li><x-elements.link title="Users" href="/users" icon="bi bi-dot"></x-elements.link></li>
+                    <li><x-elements.link title="User groups" href="/training_users" icon="bi bi-dot"></x-elements.link></li>
                 </x-blocks.mmenu-dropdown>
 
                 <x-blocks.mmenu-dropdown title="Trainings">
-                    <li><i class="bi bi-dot"></i><x-elements.link title="Upcoming trainings" href="/trainings/upcoming"></x-elements.link></li>
-                    <li><x-elements.link title="Completed trainings" href="/trainings/completed"></x-elements.link></li>
+                    <li><x-elements.link title="Upcoming trainings" href="/trainings/upcoming" icon="bi bi-dot"></x-elements.link></li>
+                    <li><x-elements.link title="Completed trainings" href="/trainings/completed" icon="bi bi-dot"></x-elements.link></li>
                 </x-blocks.mmenu-dropdown>
 
                 <x-blocks.mmenu-dropdown title="Courses">
-                    <li><x-elements.link class="dropdown-item" title="Certificate" href="/certificate"></x-elements.link></li>
+                    <li><x-elements.link class="dropdown-item" title="Certificate" href="/certificate" icon="bi bi-dot"></x-elements.link></li>
                 </x-blocks.mmenu-dropdown>
 
     {{--            <x-blocks.mmenu-dropdown title="Clients">--}}
