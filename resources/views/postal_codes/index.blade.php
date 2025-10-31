@@ -6,10 +6,9 @@
 
     <x-blocks.message/>
 
-    <x-blocks.table :headers="['ID', 'Postal Code', 'City', 'Country', 'Actions']">
+    <x-blocks.table :headers="['Postal Code', 'City', 'Country', 'Actions']">
         @foreach ($postalCodes as $postalCode)
             <tr>
-                <td>{{ $postalCode->id }}</td>
                 <td>{{ $postalCode->postal_code }}</td>
                 <td>{{ $postalCode->city }}</td>
                 <td>{{ $postalCode->country }}</td>
