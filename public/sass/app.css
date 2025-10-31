@@ -1,0 +1,31 @@
+.mm-menu {
+  --mm-listitem-size: 56px;
+}
+
+/* only show the pushing animation on large down screens */
+@media (min-width: 992px) {
+  .mm-wrapper,
+  .mm-wrapper__blocker {
+    transition: none !important;
+  }
+  .mm-page {
+    transition: none !important;
+  }
+  .mm-menu {
+    transition: none !important;
+  }
+  body.mm-wrapper--sidebar-expanded #app {
+    padding-left: 0;
+  }
+  body.mm-wrapper--sidebar-expanded main.container {
+    margin-left: 0;
+  }
+}
+/* show pushing animation on small screens */
+@media (max-width: 991px) {
+  .mm-wrapper,
+  .mm-page,
+  .mm-menu {
+    transition: transform 0.3s ease;
+  }
+}
