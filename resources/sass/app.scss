@@ -6,11 +6,14 @@
 
 // bootstrap mixins and variables
 @import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
 @import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "utilities";
 
 //  import styling
 @import 'main';
 @import 'blocks/import';
 
 // bootstrap scss
-@import "~bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";

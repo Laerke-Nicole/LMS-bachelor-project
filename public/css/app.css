@@ -2959,7 +2959,7 @@ textarea.form-control-lg {
 
 .btn {
   --bs-btn-padding-x: 1.1rem;
-  --bs-btn-padding-y: 0.6rem;
+  --bs-btn-padding-y: 0.8rem;
   --bs-btn-font-family: ;
   --bs-btn-font-size: 0.9rem;
   --bs-btn-font-weight: 400;
@@ -9147,6 +9147,10 @@ textarea.form-control-lg {
   z-index: 3 !important;
 }
 
+.ls-2 {
+  letter-spacing: 0.2em !important;
+}
+
 @media (min-width: 576px) {
   .float-sm-start {
     float: left !important;
@@ -9706,6 +9710,9 @@ textarea.form-control-lg {
   }
   .text-sm-center {
     text-align: center !important;
+  }
+  .ls-sm-2 {
+    letter-spacing: 0.2em !important;
   }
 }
 @media (min-width: 768px) {
@@ -10268,6 +10275,9 @@ textarea.form-control-lg {
   .text-md-center {
     text-align: center !important;
   }
+  .ls-md-2 {
+    letter-spacing: 0.2em !important;
+  }
 }
 @media (min-width: 992px) {
   .float-lg-start {
@@ -10828,6 +10838,9 @@ textarea.form-control-lg {
   }
   .text-lg-center {
     text-align: center !important;
+  }
+  .ls-lg-2 {
+    letter-spacing: 0.2em !important;
   }
 }
 @media (min-width: 1200px) {
@@ -11390,6 +11403,9 @@ textarea.form-control-lg {
   .text-xl-center {
     text-align: center !important;
   }
+  .ls-xl-2 {
+    letter-spacing: 0.2em !important;
+  }
 }
 @media (min-width: 1400px) {
   .float-xxl-start {
@@ -11950,6 +11966,9 @@ textarea.form-control-lg {
   }
   .text-xxl-center {
     text-align: center !important;
+  }
+  .ls-xxl-2 {
+    letter-spacing: 0.2em !important;
   }
 }
 @media (min-width: 1200px) {

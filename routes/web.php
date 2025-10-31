@@ -20,5 +20,11 @@ Route::get('/', function () {
     return view('home');
 });
 
-
+//app
 Route::resource('postal_codes', PostalCodeController::class);
+
+
+//layout
+Route::get('/login', function () {
+    return view('auth.login');
+});
