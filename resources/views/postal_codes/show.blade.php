@@ -2,36 +2,12 @@
 
 @section('content')
 
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2> Show Postal Code</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('postal_codes.index') }}"> Back</a>
-            </div>
-        </div>
-    </div>
+    <x-blocks.title href="{{ route('postal_codes.index') }}" title="Show postal code" buttonText="Go back"></x-blocks.title>
 
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Postal code:</strong>
-                {{ $postalCode->postal_code }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>City:</strong>
-                {{ $postalCode->city }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Country:</strong>
-                {{ $postalCode->country }}
-            </div>
-        </div>
+        <x-blocks.detail field="Postal code:" title="{{ $postalCode->postal_code }}"></x-blocks.detail>
+        <x-blocks.detail field="City:" title="{{ $postalCode->city }}"></x-blocks.detail>
+        <x-blocks.detail field="Country:" title="{{ $postalCode->country }}"></x-blocks.detail>
     </div>
 
 @endsection
