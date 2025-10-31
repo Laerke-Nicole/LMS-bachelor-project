@@ -56,3 +56,12 @@ $input-font-size: 1rem;
 $input-line-height: 1.4;
 $input-placeholder-color: #BEBEBE;
 $input-border-radius: 0rem;
+
+// ----- Grid & Containers -----
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px);

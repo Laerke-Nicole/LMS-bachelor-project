@@ -1,4 +1,13 @@
 @charset "UTF-8";
+.margin-screen {
+  margin-bottom: 80px;
+}
+@media (max-width: 991.98px) {
+  .margin-screen {
+    margin-bottom: 40px;
+  }
+}
+
 .mm-menu {
   --mm-listitem-size: 56px;
   --mm-color-background: $light;

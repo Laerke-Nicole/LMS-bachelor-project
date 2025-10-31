@@ -1,11 +1,16 @@
-// fonts
-//@import url('https://fonts.googleapis.com/css?family=Nunito');
+// bootstrap functions
+@import "bootstrap/scss/functions";
 
 // variables
 @import 'variable-overrides';
 
-//styling
+// bootstrap mixins and variables
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+//  import styling
+@import 'main';
 @import 'blocks/import';
 
-// Bootstrap
+// bootstrap scss
 @import "~bootstrap/scss/bootstrap";
