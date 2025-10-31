@@ -23891,43 +23891,11 @@ module.exports = function (list, options) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var mmenu_js_dist_mmenu_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mmenu-js/dist/mmenu.css */ "./node_modules/mmenu-js/dist/mmenu.css");
-/* harmony import */ var mmenu_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mmenu-js */ "./node_modules/mmenu-js/src/mmenu.js");
+/* harmony import */ var _global_mmenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./global/mmenu */ "./resources/js/global/mmenu.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-
-document.addEventListener("DOMContentLoaded", function () {
-  var menu = new mmenu_js__WEBPACK_IMPORTED_MODULE_1__["default"]("#menu", {
-    navbar: {
-      add: true,
-      title: "title"
-    },
-    slidingSubmenus: false,
-    offCanvas: {
-      position: "left"
-    },
-    theme: "light",
-    extensions: ["position-left", "position-front", "pagedim-black"],
-    sidebar: {
-      collapsed: {
-        use: false
-      },
-      expanded: {
-        use: "(min-width: 992px)"
-      }
-    }
-  });
-
-  // Get the API
-  var api = menu.API;
-
-  // Log when menu opens/closes for debugging
-  api.bind("open:start", function () {
-    return console.log("Menu opening");
-  });
-  api.bind("close:start", function () {
-    return console.log("Menu closing");
-  });
+document.addEventListener('DOMContentLoaded', function () {
+  (0,_global_mmenu__WEBPACK_IMPORTED_MODULE_0__.initMmenu)();
 });
 
 /***/ }),
@@ -23965,6 +23933,57 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/global/mmenu.js":
+/*!**************************************!*\
+  !*** ./resources/js/global/mmenu.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initMmenu: () => (/* binding */ initMmenu)
+/* harmony export */ });
+/* harmony import */ var mmenu_js_dist_mmenu_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mmenu-js/dist/mmenu.css */ "./node_modules/mmenu-js/dist/mmenu.css");
+/* harmony import */ var mmenu_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mmenu-js */ "./node_modules/mmenu-js/src/mmenu.js");
+
+
+var initMmenu = function initMmenu() {
+  var menu = new mmenu_js__WEBPACK_IMPORTED_MODULE_1__["default"]("#menu", {
+    navbar: {
+      add: true,
+      title: "title"
+    },
+    slidingSubmenus: false,
+    offCanvas: {
+      position: "left"
+    },
+    theme: "light",
+    extensions: ["position-left", "position-front", "pagedim-black"],
+    sidebar: {
+      collapsed: {
+        use: false
+      },
+      expanded: {
+        use: "(min-width: 992px)"
+      }
+    }
+  });
+
+  // Get the API
+  var api = menu.API;
+
+  // Log when menu opens/closes for debugging
+  api.bind("open:start", function () {
+    return console.log("Menu opening");
+  });
+  api.bind("close:start", function () {
+    return console.log("Menu closing");
+  });
+};
 
 /***/ }),
 
