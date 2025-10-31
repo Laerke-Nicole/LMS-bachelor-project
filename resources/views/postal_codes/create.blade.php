@@ -1,8 +1,9 @@
-@extends('components.layouts.layout')
+@extends('layouts.layout')
 
 @section('content')
 
-    <x-blocks.title href="{{ route('postal_codes.index') }}" title="Add new postal code" buttonText="Go back"></x-blocks.title>
+    <x-blocks.title href="{{ route('postal_codes.index') }}" title="Add new postal code"
+                    buttonText="Go back"></x-blocks.title>
 
     <x-blocks.error-alert/>
 

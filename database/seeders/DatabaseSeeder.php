@@ -12,7 +12,6 @@ use App\Models\FollowUpTest;
 use App\Models\Gdpr;
 use App\Models\PostalCode;
 use App\Models\Preparation;
-use App\Models\Product;
 use App\Models\Requirement;
 use Database\Factories\SignatureFactory;
 use Database\Factories\UserTestResultFactory;
@@ -47,7 +46,6 @@ class DatabaseSeeder extends Seeder
         FollowUpMaterial::factory(20)->create();
         Preparation::factory(20)->create();
         Requirement::factory(10)->create();
-        Product::factory(50)->create();
         SignatureFactory::new()->count(50)->create();
         UserTestResultFactory::new()->count(50)->create();
         EmailUser::factory(100)->create();

@@ -1,12 +1,12 @@
-@extends('components.layouts.layout')
+@extends('layouts.app')
 
 @section('content')
 
-    <x-blocks.title href="{{ route('postal_codes.create') }}" title="Postal Codes" buttonText="Create New Postal Code" />
+    <x-blocks.title href="{{ route('postal_codes.create') }}" title="Postal Codes" buttonText="Create New Postal Code"/>
 
-    <x-blocks.message />
+    <x-blocks.message/>
 
-    <x-blocks.table :headers="['ID', 'Postal Code', 'City', 'Country', 'Action']">
+    <x-blocks.table :headers="['ID', 'Postal Code', 'City', 'Country', 'Actions']">
         @foreach ($postalCodes as $postalCode)
             <tr>
                 <td>{{ $postalCode->id }}</td>
@@ -14,13 +14,15 @@
                 <td>{{ $postalCode->city }}</td>
                 <td>{{ $postalCode->country }}</td>
                 <td>
-                    <x-blocks.table-row-actions :showRoute="route('postal_codes.show', $postalCode->id)" :editRoute="route('postal_codes.edit', $postalCode->id)" :deleteRoute="route('postal_codes.destroy', $postalCode->id)" />
+                    <x-blocks.table-row-actions :showRoute="route('postal_codes.show', $postalCode->id)"
+                                                :editRoute="route('postal_codes.edit', $postalCode->id)"
+                                                :deleteRoute="route('postal_codes.destroy', $postalCode->id)"/>
                 </td>
             </tr>
         @endforeach
     </x-blocks.table>
 
 
-    <x-blocks.pagination :items="$postalCodes" />
+    <x-blocks.pagination :items="$postalCodes"/>
 
 @endsection

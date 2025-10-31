@@ -24,3 +24,5 @@ Route::get('/', function () {
 
 Route::resource('postal_codes', PostalCodeController::class);
 //Route::resource('address', AddressController::class);
+
+Route::get('/home', 'HomeController@index')->name('home');

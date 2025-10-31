@@ -1,10 +1,10 @@
 @props(['headers'])
 
-<table class="table table-bordered">
+<table class="table">
     <thead>
     <tr>
         @foreach ($headers as $header)
-            <th>{{ $header }}</th>
+            <th scope="col">{{ $header }}</th>
         @endforeach
     </tr>
     </thead>
