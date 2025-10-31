@@ -72,28 +72,29 @@
 
     <nav id="menu">
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/work">Our work</a></li>
-            <li><span>About us</span>
-                <ul>
-                    <li><a href="/about/history">History</a></li>
-                    <li><span>The team</span>
-                        <ul>
-                            <li><a href="/about/team/management">Management</a></li>
-                            <li><a href="/about/team/sales">Sales</a></li>
-                            <li><a href="/about/team/development">Development</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><span>Services</span>
-                <ul>
-                    <li><a href="/services/design">Design</a></li>
-                    <li><a href="/services/development">Development</a></li>
-                    <li><a href="/services/marketing">Marketing</a></li>
-                </ul>
-            </li>
-            <li><a href="/contact">Contact</a></li>
+            <li><x-elements.link href="/" class="" title="Dashboard"></x-elements.link></li>
+            <li><x-elements.link href="/companies" class="" title="Clients"></x-elements.link></li>
+            <li><x-elements.link href="/trainings" class="" title="Trainings"></x-elements.link></li>
+            <li><x-elements.link href="/courses" class="" title="Courses"></x-elements.link></li>
+
+            <x-blocks.mmenu-dropdown title="Clients">
+                <li><x-elements.link class="" title="Sites" href="/sites"></x-elements.link></li>
+                <li><x-elements.link class="" title="Users" href="/users"></x-elements.link></li>
+                <li><x-elements.link class="" title="User groups" href="/training_users"></x-elements.link></li>
+            </x-blocks.mmenu-dropdown>
+
+            <x-blocks.mmenu-dropdown title="Trainings">
+                <li><x-elements.link class="" title="Upcoming trainings" href="/trainings/upcoming"></x-elements.link></li>
+                <li><x-elements.link class="" title="Completed trainings" href="/trainings/completed"></x-elements.link></li>
+            </x-blocks.mmenu-dropdown>
+
+
+            <x-blocks.mmenu-dropdown title="Clients">
+                <x-blocks.mmenu-dropdown title="Clients">
+                    <li><x-elements.link class="" title="Test" href="/sites"></x-elements.link></li>
+                    <li><x-elements.link class="" title="Test" href="/sites"></x-elements.link></li>
+                </x-blocks.mmenu-dropdown>
+            </x-blocks.mmenu-dropdown>
         </ul>
     </nav>
 
