@@ -15,23 +15,23 @@
     <header>
         <div class="p-3 d-lg-none">
             <a href="#menu" class="btn fs-3">
-                <span>☰</span>
+                <span><i class="bi bi-list"></i></span>
             </a>
         </div>
 
         <nav id="menu">
             <ul>
-                <li><x-elements.link href="/" class="" title="Dashboard"></x-elements.link></li>
+                <li><x-elements.link href="/" title="Dashboard"></x-elements.link></li>
 
                 <x-blocks.mmenu-dropdown title="Clients">
-                    <li><x-elements.link class="" title="Sites" href="/sites"></x-elements.link></li>
-                    <li><x-elements.link class="" title="Users" href="/users"></x-elements.link></li>
-                    <li><x-elements.link class="" title="User groups" href="/training_users"></x-elements.link></li>
+                    <li><x-elements.link title="Sites" href="/sites"></x-elements.link></li>
+                    <li><x-elements.link title="Users" href="/users"></x-elements.link></li>
+                    <li><x-elements.link title="User groups" href="/training_users"></x-elements.link></li>
                 </x-blocks.mmenu-dropdown>
 
                 <x-blocks.mmenu-dropdown title="Trainings">
-                    <li><x-elements.link class="" title="Upcoming trainings" href="/trainings/upcoming"></x-elements.link></li>
-                    <li><x-elements.link class="" title="Completed trainings" href="/trainings/completed"></x-elements.link></li>
+                    <li><i class="bi bi-dot"></i><x-elements.link title="Upcoming trainings" href="/trainings/upcoming"></x-elements.link></li>
+                    <li><x-elements.link title="Completed trainings" href="/trainings/completed"></x-elements.link></li>
                 </x-blocks.mmenu-dropdown>
 
                 <x-blocks.mmenu-dropdown title="Courses">
@@ -40,8 +40,8 @@
 
     {{--            <x-blocks.mmenu-dropdown title="Clients">--}}
     {{--                <x-blocks.mmenu-dropdown title="Clients">--}}
-    {{--                    <li><x-elements.link class="" title="Test" href="/sites"></x-elements.link></li>--}}
-    {{--                    <li><x-elements.link class="" title="Test" href="/sites"></x-elements.link></li>--}}
+    {{--                    <li><x-elements.link title="Test" href="/sites"></x-elements.link></li>--}}
+    {{--                    <li><x-elements.link title="Test" href="/sites"></x-elements.link></li>--}}
     {{--                </x-blocks.mmenu-dropdown>--}}
     {{--            </x-blocks.mmenu-dropdown>--}}
             </ul>

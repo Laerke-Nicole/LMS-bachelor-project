@@ -1,1 +1,1 @@
-<a class="{{ $class }}" href="{{ $attributes->get('href') }}">{{ $title }}</a>
+<a class="{{ $class ?? null }}" href="{{ $attributes->get('href') }}">{{ $title }}</a>

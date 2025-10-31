@@ -1,5 +1,5 @@
 @props(['items'])
 
-<div class="mt-3">
+<div>
     {!! $items->links() !!}
 </div>

@@ -1,11 +1,11 @@
-<div class="col-12">
+<div class="col-12 col-lg-4">
     <div class="form-group mb-3">
         <label class="form-label ls-2 fs-6 text-uppercase">{{ $label }}</label>
         <input
             type="{{ $type ?? 'text' }}"
             name="{{ $name }}"
             value="{{ old($name, $value ?? '') }}"
-            class="{{ $class }}"
+            class="{{ $class ?? null }}"
             placeholder="{{ $placeholder ?? $label }}"
         >
     </div>

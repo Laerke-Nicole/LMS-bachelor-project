@@ -23,6 +23,6 @@
     </x-blocks.table>
 
 
-    <x-blocks.pagination :items="$postalCodes"/>
+    <x-elements.pagination :items="$postalCodes"/>
 
 @endsection
