@@ -5,24 +5,15 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Edit Postal Code</h2>
+                <h2>Edit Postal Code</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('postal_codes.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('postal_codes.index') }}">Back</a>
             </div>
         </div>
     </div>
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    <x-error-alert />
 
     <form action="{{ route('postal_codes.update', $postalCode->id) }}" method="POST">
         @csrf

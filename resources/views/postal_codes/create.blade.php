@@ -2,55 +2,16 @@
 
 @section('content')
 
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Add New Postal Code</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('postal_codes.index') }}"> Back</a>
-            </div>
-        </div>
-    </div>
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    <x-title href="{{ route('postal_codes.index') }}" title="Add new Postal Code" buttonText="Back"></x-title>
 
+    <x-error-alert />
 
-    <form action="{{ route('postal_codes.store') }}" method="POST">
-        @csrf
+    <x-form action="{{ route('postal_codes.store') }}" buttonText="Submit">
+        <x-input label="Postal Code" name="postal_code" />
+        <x-input label="City" name="city" />
+        <x-input label="Country" name="country" />
+    </x-form>
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Postal code:</strong>
-                    <input type="text" name="postal_code" class="form-control" placeholder="Postal code">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>City:</strong>
-                    <input class="form-control" name="city" placeholder="City">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Country:</strong>
-                    <input class="form-control" name="country" placeholder="Country">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
-    </form>
 
 @endsection
